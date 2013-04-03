@@ -14,18 +14,20 @@
             
             /*** Convert to Char Code ***/
             var code = e.which;
+            
+            //These are special cases that don't fit the ASCII mapping
             var exceptions = {
-                186: 59,
-                187: 61,
-                188: 44,
-                189: 45,
-                190: 46,
-                191: 47,
-                192: 96,
-                219: 91,
-                220: 92,
-                221: 93,
-                222: 39
+                186: 59, // ;
+                187: 61, // =
+                188: 44, // ,
+                189: 45, // -
+                190: 46, // .
+                191: 47, // /
+                192: 96, // `
+                219: 91, // [
+                220: 92, // \
+                221: 93, // ]
+                222: 39  // '
             }
             if(typeof exceptions[code] != 'undefined') code = exceptions[code];
             
