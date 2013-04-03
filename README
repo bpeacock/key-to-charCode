@@ -1,0 +1,12 @@
+jQuery getChar takes a key event and returns the ASCII charCode for that event.
+
+Example Usage:
+
+$(document).keydown(function(e) {
+    var char = $.getChar(e);
+        
+    console.log(char);
+    console.log(String.fromCharCode(char));
+});
+
+This will log the character code and it's corresponding string representation.
