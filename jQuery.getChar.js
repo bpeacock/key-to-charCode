@@ -10,8 +10,6 @@
 (function($) {
     $.extend({
         getChar: function(e) {
-            console.log(e.which);
-            
             /*** Convert to Char Code ***/
             var code = e.which;
             
