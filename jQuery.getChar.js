@@ -12,7 +12,7 @@
         getChar: function(e) {
             console.log(e.which);
             
-            /*** Conver to Char Code ***/
+            /*** Convert to Char Code ***/
             var code = e.which;
             var exceptions = {
                 186: 59,
