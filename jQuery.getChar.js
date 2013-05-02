@@ -2,7 +2,7 @@
  * name: jQuery getChar
  * repository: https://github.com/bpeacock/key-to-charCode
  * @author Brian Peacock
- * @version 0.1
+ * @version 0.2
  * Copyright 2013, Brian Peacock
  * Licensed under the MIT license.
  */
@@ -12,6 +12,9 @@
         getChar: function(e) {
             /*** Convert to Char Code ***/
             var code = e.which;
+            
+            //Ignore Shift Key events & arrows
+            if([16, 37, 38, 39, 40, 20, 17, 18, 91].indexOf(code) > -1) return false;
             
             //These are special cases that don't fit the ASCII mapping
             var exceptions = {
