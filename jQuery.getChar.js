@@ -2,7 +2,7 @@
  * name: jQuery getChar
  * repository: https://github.com/bpeacock/key-to-charCode
  * @author Brian Peacock
- * @version 0.2
+ * @version 0.3
  * Copyright 2013, Brian Peacock
  * Licensed under the MIT license.
  */
@@ -14,7 +14,20 @@
             var code = e.which;
             
             //Ignore Shift Key events & arrows
-            if([16, 37, 38, 39, 40, 20, 17, 18, 91].indexOf(code) > -1) return false;
+            var ignoredCodes = {
+                16: true,
+                37: true,
+                38: true,
+                39: true,
+                40: true,
+                20: true,
+                17: true,
+                18: true,
+                91: true
+            };
+            if(ignoredCodes[code] === true) {
+                return false;
+            }
             
             //These are special cases that don't fit the ASCII mapping
             var exceptions = {
@@ -29,8 +42,11 @@
                 220: 92, // \
                 221: 93, // ]
                 222: 39  // '
+            };
+
+            if(exceptions[code] !== undefined) {
+                code = exceptions[code];
             }
-            if(typeof exceptions[code] != 'undefined') code = exceptions[code];
             
             var ch = String.fromCharCode(code);
             
@@ -59,8 +75,10 @@
                     '-': '_',
                     '=': '+'
                 };
-                
-                if(typeof special[ch] != 'undefined') ch = special[ch];
+
+                if(special[ch] !== undefined) {
+                    ch = special[ch];
+                }
             }
             else {
                 ch = ch.toLowerCase();
