@@ -25,6 +25,7 @@
                 18: true,
                 91: true
             };
+            
             if(ignoredCodes[code] === true) {
                 return false;
             }
