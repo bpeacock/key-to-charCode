@@ -42,7 +42,18 @@
                 219: 91, // [
                 220: 92, // \
                 221: 93, // ]
-                222: 39  // '
+                222: 39, // '
+                //numeric keypad
+                96: '0'.charCodeAt(0),
+                97: '1'.charCodeAt(0),
+                98: '2'.charCodeAt(0),
+                99: '3'.charCodeAt(0),
+                100: '4'.charCodeAt(0),
+                101: '5'.charCodeAt(0),
+                102: '6'.charCodeAt(0),
+                103: '7'.charCodeAt(0),
+                104: '8'.charCodeAt(0),
+                105: '9'.charCodeAt(0)
             };
 
             if(exceptions[code] !== undefined) {
